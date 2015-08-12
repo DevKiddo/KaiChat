@@ -8,8 +8,8 @@ firebaseRef.onAuth(function(authData) {
   // Once authenticated, instantiate Firechat with the user id and user name
   if (authData && !isInitialized) {
   	initChat(authData);
-  	$('#container_demo').hide();
-  	$('#firechat-wrapper').show();
+  	$('#container_demo').hide(); //hides login/registration form
+  	$('#firechat-wrapper').show(); //shows chat
   }
 });
 
@@ -27,8 +27,7 @@ function registerUser() {
 			alert(error, error);
 		} else {
 			console.log("Successfully created user account with uid:", userData.uid);
-			$('#container_demo').hide();
-			loginUser(username, password);
+			loginUser(username, password); //automatically logs user in after registering
 
 		}
 	});
@@ -47,16 +46,16 @@ function loginUser(username, password) {
 			alert("Login Failed! "+ error, error);
 		} else {
 			console.log("Authenticated successfully with payload:", authData);
-			$('#container_demo').hide();
-			$('#firechat-wrapper').show();
+			$('#container_demo').hide(); //hides login/registration form
+			$('#firechat-wrapper').show(); //shows chat
 		}
 
 	}, {
-		remember: checkLoginTerm()
+		remember: checkLoginTerm() //login term for user 
 	});
 }
 
-// Initialize FireChat if user has been authenticated
+// Initialize FireChat after user has been authenticated
 
 function initChat(authData) {
 	var chat = new FirechatUI(firebaseRef, document.getElementById('firechat-wrapper'));
@@ -64,7 +63,7 @@ function initChat(authData) {
 }
 
 
-// To check if variable does not exist
+// Checks if variable does not exist
 
 function checkVariable(variable) {
 	if (typeof variable !== 'undefined')
@@ -72,7 +71,7 @@ function checkVariable(variable) {
 	return true;
 }
 
-// To check if the user wants to remain logged in or not
+// Checks if the user wants to remain logged in or not
 
 function checkLoginTerm() {
 	var result;
@@ -84,7 +83,7 @@ function checkLoginTerm() {
 	return result;
 }
 
-// To compare for password equality when user is signing up
+// Compares for password equality when user is signing up
 
 function comparePasswords(){
 	if($('#passwordsignup').val()!=$('#registerPassword').val()){

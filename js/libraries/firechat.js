@@ -481,7 +481,7 @@ this["FirechatDefaultTemplates"]["templates/user-search-list-item.html"] = funct
 
     newMessageRef = self._messageRef.child(roomId).push();
 
-    //Calculates sentiment analysis and appends the appropiate smiley face to the message
+    //Calculates sentiment score and appends the appropiate smiley face to the message
 
     if ((calculateSentiment(message.message)) > 0.5) {
     	message.message += " :)";
@@ -490,6 +490,7 @@ this["FirechatDefaultTemplates"]["templates/user-search-list-item.html"] = funct
     } else if ((calculateSentiment(message.message)) < 0.5) {
     	message.message += " :(";
     }
+    
     newMessageRef.setWithPriority(message, Firebase.ServerValue.TIMESTAMP, cb);
   };
 
