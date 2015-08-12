@@ -571,6 +571,22 @@
     height: 40px;
   }
 
+  .search-wrapper {
+    .border-radius(15px);
+    border: 1px solid #cccccc;
+    margin: 0 5px;
+    padding: 2px 5px;
+    background: #ffffff;
+  }
+  .search-wrapper > input[type=text] {
+    padding-left: 0px;
+    border: none;
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+  }
+
   #firechat-wrapper {
     height: 85vh;
     max-width: 30vw;
@@ -589,21 +605,7 @@
     overflow: hidden;
 
   }
-  .search-wrapper {
-    .border-radius(15px);
-    border: 1px solid #cccccc;
-    margin: 0 5px;
-    padding: 2px 5px;
-    background: #ffffff;
-  }
-  .search-wrapper > input[type=text] {
-    padding-left: 0px;
-    border: none;
-    &:focus,
-    &:active {
-      outline: 0;
-    }
-  }
+  
   .chat {
     overflow: auto;
     -ms-overflow-x: hidden;
@@ -670,7 +672,7 @@ ul::-webkit-scrollbar-thumb {
 }
 #firechat-tab-list {
   background-color: #ffffff;
-}
+  }
 #firechat-tab-content {
   width: 100%;
   background-color: #ffffff;
