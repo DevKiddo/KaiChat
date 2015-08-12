@@ -1,2 +1,2 @@
 # KaiChat
-Real-Time chat using Firebase and Firechat
+Real-Time chat built with Firebase and Firechat
