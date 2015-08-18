@@ -481,7 +481,7 @@ this["FirechatDefaultTemplates"]["templates/user-search-list-item.html"] = funct
 
     newMessageRef = self._messageRef.child(roomId).push();
 
-    //Calculates sentiment score and appends the appropiate smiley face to the message
+    //Calculates sentiment score and appends the appropiate emoticon to the message
 
     if ((calculateSentiment(message.message)) > 0.5) {
     	message.message += " :)";
